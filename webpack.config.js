@@ -5,7 +5,7 @@ config = {
   entry: [
     'webpack/hot/dev-server',
     'webpack-dev-server/client?http://localhost:8080',
-    path.resolve(__dirname, 'src/client/core.js')
+    path.resolve(__dirname, 'src/core.js')
   ],
   module: {
     loaders: [{
