@@ -3,7 +3,6 @@ import ReactDOM from "react-dom"
 import {Map} from "immutable"
 const {a, input, div, h1, nav, button, p, span} = require("hyperscript-helpers")(React.createElement)
 
-
 const NavBar = ({navs}) => nav(null, navs.map(item => a({href: "/#", key: item}, item)))
 
 const Welcome = ({welcome}) => h1(null, welcome)
@@ -14,7 +13,6 @@ const Feedback = ({result, hidden}) => p({hidden},
                                          result ? "That's right!" : "No, that's wrong. Try again!" )
 
 const Koan = ({koan}) => p(null, koan)
-
 
 class CodeInput extends Component {
   constructor (props) {
@@ -36,16 +34,22 @@ class CodeInput extends Component {
         }
       }),
       span(null, this.props.code),
-      button({onClick: () => {
-        this.setState(state => {
-          return {
-            data: state.data.update("result", () => {
-              try {return eval(this.state.data.get("code") + this.props.code) }
-              catch (err) {return err.message}
-            })
-          }
-        })
-      }}, "Eval"),
+      button({
+        onClick: () => {
+          this.setState(state => {
+            return {
+              data: state.data.update("result", () => {
+                try {
+                  return eval(this.state.data.get("code") + this.props.code)
+                }
+                catch (err) {
+                  return err.message
+                }
+              })
+            }
+          })
+        }
+      }, "Eval"),
       createElement(Feedback, {result: this.state.data.get("result"), hidden: false})
     )
   }
