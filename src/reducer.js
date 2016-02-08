@@ -4,11 +4,15 @@ export const INITIAL_STATE = Map(
   {
     lessons: Stack([
       {
-        koan: "Equity",
+        koan: "Equality",
         code: "X === 42"
       },{
-        koan: "Additions",
+        koan: "Addition",
         code: "39 + X === 42"
+      },
+      {
+        koan: "Multiplication",
+        code: "14 * X === 42"
       }
     ]),
     knowledge: Stack(),

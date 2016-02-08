@@ -21,10 +21,9 @@ class App extends Component {
     const {lessons, welcome, knowledge, nextKoan, previousKoan} = this.props;
     let koanNode;
 
-      
     if (lessons.size > 0) {
       let {code, koan} = lessons.first();
-      koanNode = createElement(Koan, {code, koan});
+      koanNode = createElement(Koan, {code, koan, nextKoan});
     } else {
       koanNode = createElement(Finish, {congratulation: "You achieved wisdom!"});
     }  
@@ -34,8 +33,7 @@ class App extends Component {
       createElement(Welcome, {welcome}),
       createElement(NavBar, null),
       koanNode,
-      button({onClick: previousKoan, disabled: knowledge.size === 0}, "prev"),
-      button({onClick: nextKoan, disabled: lessons.size === 0}, "next")
+      button({onClick: previousKoan, disabled: knowledge.size === 0}, "prev")
     );
   }
 }
@@ -48,4 +46,7 @@ function mapStateToProps (state) {
   };
 }
 
-export const AppContainer = connect(mapStateToProps, actionCreators)(App);
+export const AppContainer = connect(
+  mapStateToProps,
+  actionCreators
+)(App);
