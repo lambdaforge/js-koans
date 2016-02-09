@@ -1,3 +1,134 @@
+html { font-size: 62.5% }
+
 body {
-    background: white;
+  font-family: "Neuton", serif;
+  font-size: 2.4rem;
+  background: #E9EAEB;
+  color: #36373A;
+  padding-top: 50px;
+  padding-bottom: 100px;
+  line-height: 1.65;
 }
+
+.-center { margin-left: auto; margin-right: auto; }
+.-uppercase { text-transform: uppercase }
+.-text-center { text-align: center }
+.-half-rhythm * + * { margin-top: .5em }
+.-horizontal * + * { margin-top: 0 }
+
+body * + * {
+  margin-top: 1em;
+}
+
+header * + * {
+	margin-top: .5em;
+}
+
+header {
+  line-height: 1;
+}
+
+
+.koan {
+  padding-top: 2em;
+}
+
+.koan-code {
+  background: #525760;
+  text-align: center;
+  border-top: 1px solid #525760;
+  box-shadow: inset 0px 1px 0px 0px rgba(255,255,255,1);
+}
+
+.koan-code input {
+  background: #525760;
+  border: 0;
+}
+
+.code-input, .code-input input {
+	font-family: "Source Code Pro", monospace;
+	font-size: 2.0rem;
+	color: #fff;
+	text-align: center;
+}
+
+
+.koan-code span {
+  color: #5896C6;
+}
+
+.code-input {
+  padding: 1em 1em 0;
+}
+
+.code-warning {
+  background: #FF9A9A;
+	border-top: 1px solid #3B3E45;
+  border-bottom: 1px solid #FF6B6B;
+  text-align: center;
+  font-size: 1.6rem;
+  padding: .5em 1em;
+}
+
+.container {
+  width: 650px;
+  max-width: 90%;
+}
+
+.container.-small {
+  width: 480px;
+}
+
+.navigation {
+  background: white;
+  border-top: 1px solid #BDC0C3;
+  padding-top: 1px;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  font-size: 1.9rem;
+}
+
+.navigation a {
+  color: #ADB1B4;
+  flex: 1;
+  background: #DEE0E1;
+  padding: .5em 0;
+}
+
+.navigation svg {
+  fill: #adb1b4;
+  padding-right: .25em;
+}
+
+.navigation a.active,
+.navigation a:hover,
+.navigation a:focus {
+  background: #CDCFD2;
+  transition: background .2s ease-in-out, color .2s ease-in-out;
+}
+
+.navigation a.active svg,
+.navigation a:hover svg,
+.navigation a:focus svg {
+  fill: #36373A;
+  transition: fill .2s ease-in-out, color .2s ease-in-out;
+}
+
+button,
+.button {
+  text-transform: uppercase;
+  padding: .25em 1em;
+  font-size: 1.9rem;
+  border: 1px solid #BDC0C3;
+  background: #E3E5E6;
+  box-shadow: inset 0px 1px 0px 0px rgba(255,255,255,1);
+}
+
+h1 { font-size: 3.6rem }
+h2 { font-size: 1.7rem }
+
+a {
+  text-decoration: none;
+}
+a:hover { color: #202C42 }
