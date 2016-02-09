@@ -3,13 +3,12 @@ import {connect} from "react-redux";
 import {Koan} from "./Koan.js";
 import Hyperscript from "hyperscript-helpers";
 import * as actionCreators from "../action_creators";
-const {button, div, h2,nav, a} = Hyperscript(createElement);
+const {button, div, h2,nav, a, img} = Hyperscript(createElement);
+
+import {Header, NavBar} from "./Home.js";
 
 const Welcome = ({welcome}) => h2(null, welcome);
 
-const NavBar = () =>
-        nav(null,
-            [1,2,3].map(item => a({href: "/#", key: item}, item)));
 
 const Finish  = ({congratulation}) => h2(null, congratulation);
 
@@ -23,15 +22,14 @@ class App extends Component {
 
     if (lessons.size > 0) {
       let {code, koan} = lessons.first();
-      koanNode = createElement(Koan, {code, koan, nextKoan});
+      koanNode = createElement(Koan, {code, koan, nextKoan, byline: "Byline"});
     } else {
       koanNode = createElement(Finish, {congratulation: "You achieved wisdom!"});
-    }  
+    }
 
     return div(
       null,
-      createElement(Welcome, {welcome}),
-      createElement(NavBar, null),
+      createElement(Header, null),
       koanNode,
       button({onClick: previousKoan, disabled: knowledge.size === 0}, "prev")
     );
