@@ -8,7 +8,7 @@ export const INITIAL_STATE = Map(
         code: "X === 42"
       },{
         koan: "Addition",
-        code: "39 + X === 42"
+        code: "37 + X === 42"
       },
       {
         koan: "Multiplication",

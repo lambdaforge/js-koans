@@ -34,7 +34,7 @@ export class Koan extends Component {
               nextKoan();
               return "";
             } else {
-              return "That's not correct!";
+              return "Sorry, that is not correct!";
             }
           }
           catch (err) {
