@@ -1,16 +1,15 @@
 import "./style.css";
 import {createElement} from "react";
 import ReactDOM from "react-dom";
-import {reducer} from "./reducer.js";
-import {Provider} from "react-redux";
-import {createStore} from "redux";
-import {AppContainer} from "./components/App.js";
+import {Router} from "react-router";
+import createBrowserHistory from 'history/lib/createBrowserHistory';
+import {routes} from "./routes.js";
 
 function run() {
-  let store = createStore(reducer);
+  let bHistory = createBrowserHistory();
   
   ReactDOM.render(
-    createElement(Provider, {store: store}, createElement(AppContainer)),
+    createElement(Router, {children: routes, history: bHistory}),
     document.getElementById('app')
   );
 }
