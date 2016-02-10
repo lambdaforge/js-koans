@@ -9,7 +9,7 @@ config = {
   ],
   module: {
     loaders: [{
-      test: /\.jsx?$/,
+      test: /\.js?$/,
       exclude: /node_modules/,
       loader: 'babel-loader',
       query: {
@@ -31,8 +31,7 @@ config = {
   devServer: {
     contentBase: './dist',
     hot: true,
-    stats: {colors: true},
-    inline: true
+    stats: {colors: true}
   },
   plugins: [new webpack.HotModuleReplacementPlugin()]
 }
