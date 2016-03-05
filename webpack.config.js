@@ -3,8 +3,6 @@ var webpack = require('webpack');
     
 config = {
   entry: [
-    'webpack/hot/dev-server',
-    'webpack-dev-server/client?http://localhost:8080',
     path.resolve(__dirname, 'src/core.js')
   ],
   module: {
@@ -27,13 +25,7 @@ config = {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
     filename: 'bundle.js'
-  },
-  devServer: {
-    contentBase: './dist',
-    hot: true,
-    stats: {colors: true}
-  },
-  plugins: [new webpack.HotModuleReplacementPlugin()]
+  }
 }
 
 module.exports = config;

@@ -7,8 +7,7 @@ const AllKoansIcon = () =>
     createElement("rect", {x:0, y:0, width:5, height:5, style: {}}),
     createElement("rect", {x:7, y:0, width:5, height:5, style: {}}),
     createElement("rect", {x:0, y:7, width:5, height:5, style: {}}),
-    createElement("rect", {x:7, y:7, width:5, height:5, style: {}})
-               );
+    createElement("rect", {x:7, y:7, width:5, height:5, style: {}}));
 
 const NavBar = () =>
   nav({className: "navigation -horizontal"},
