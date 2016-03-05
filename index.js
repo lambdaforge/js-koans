@@ -11,5 +11,6 @@ app.get("*", function(req, res){
 });
 
 app.listen(SERVER_PORT, function () {
+  console.log("HEIL mein LORD");
   console.log("Server listening on port " + SERVER_PORT);
 })
